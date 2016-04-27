@@ -4,7 +4,7 @@ An [Alfred 2](https://www.alfredapp.com/) workflow for generating [lorem ipsum](
 
 ## Installation
 
-1. [Download the workflow](https://github.com/alexchantastic/alfred-lorem-ipsum-workflow/raw/master/alfred-lorem-ipsum-workflow/alfred-lorem-ipsum-workflow.alfredworkflow)
+1. [Download the workflow](https://github.com/alexchantastic/alfred-lorem-ipsum-workflow/blob/master/alfred-lorem-ipsum-workflow.alfredworkflow?raw=true)
 2. Double click the `.alfredworkflow` file to install
 
 Note that the [Alfred Powerpack](https://www.alfredapp.com/powerpack/) is required to use workflows.
