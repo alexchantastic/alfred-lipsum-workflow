@@ -1,11 +1,21 @@
 <?php
-$length = $argv[1];
-$number = $argv[2];
+include_once('lib/LoremIpsum.php');
 
-exec("curl http://loripsum.net/api/plaintext/" . $length . "/" . $number . "/", $data);
+$lipsum = new joshtronic\LoremIpsum();
 
-$data = implode("\n", $data);
+$type = $argv[1];
+$length = $argv[2];
 
-$data = rtrim($data);
+if (!$length) {
+  $length = 1;
+}
 
-echo $data;
+if ($type === 'words') {
+  echo $lipsum->words($length);
+}
+elseif ($type === 'sentences') {
+  echo $lipsum->sentences($length);
+}
+elseif ($type === 'paragraphs') {
+  echo $lipsum->paragraphs($length);
+}

@@ -30,17 +30,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>783F43E8-511B-42A6-9B8A-71B1DBA898BF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C32D6987-0155-4DAC-9AE9-FC8490E69793</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>7BD2998D-4CDE-4653-B6FB-B7BEF837A34C</key>
 		<array>
 			<dict>
@@ -74,17 +63,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>C32D6987-0155-4DAC-9AE9-FC8490E69793</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>125F91DD-9720-45BD-9F14-08966CFC2643</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>E92D3CF8-7C01-42C4-9BB5-6FD3109326A6</key>
 		<array>
 			<dict>
@@ -100,11 +78,11 @@
 	<key>createdby</key>
 	<string>Alex Chan</string>
 	<key>description</key>
-	<string>Get dummy text from loripsum.net API.</string>
+	<string>Generate dummy lorem ipsum text.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Lorem Ipsum v1.0.0</string>
+	<string>Lorem Ipsum v2.0.0</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -115,9 +93,9 @@
 				<key>keyword</key>
 				<string>lipsum</string>
 				<key>subtext</key>
-				<string>Generate {query} short paragraphs</string>
+				<string>Generate {query} words</string>
 				<key>text</key>
-				<string>Short</string>
+				<string>Words</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -151,7 +129,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "short" "{query}"</string>
+				<string>php -f script.php "words" "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -170,9 +148,9 @@
 				<key>keyword</key>
 				<string>lipsum</string>
 				<key>subtext</key>
-				<string>Generate {query} medium paragraphs</string>
+				<string>Generate {query} sentences</string>
 				<key>text</key>
-				<string>Medium</string>
+				<string>Sentences</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -189,9 +167,9 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>100</integer>
+				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "medium" "{query}"</string>
+				<string>php -f script.php "sentences" "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -208,9 +186,9 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>100</integer>
+				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "long" "{query}"</string>
+				<string>php -f script.php "paragraphs" "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -229,9 +207,9 @@
 				<key>keyword</key>
 				<string>lipsum</string>
 				<key>subtext</key>
-				<string>Generate {query} long paragraphs</string>
+				<string>Generate {query} paragraphs</string>
 				<key>text</key>
-				<string>Long</string>
+				<string>Paragraphs</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -239,46 +217,6 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>81786618-C116-42AA-87BB-06537E229EEC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>script</key>
-				<string>php -f script.php "verylong" "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>C32D6987-0155-4DAC-9AE9-FC8490E69793</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>lipsum</string>
-				<key>subtext</key>
-				<string>Generate {query} very long paragraphs</string>
-				<key>text</key>
-				<string>Very Long</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>783F43E8-511B-42A6-9B8A-71B1DBA898BF</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -302,11 +240,6 @@
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
-		<key>783F43E8-511B-42A6-9B8A-71B1DBA898BF</key>
-		<dict>
-			<key>ypos</key>
-			<real>370</real>
-		</dict>
 		<key>7BD2998D-4CDE-4653-B6FB-B7BEF837A34C</key>
 		<dict>
 			<key>ypos</key>
@@ -322,11 +255,6 @@
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
-		<key>C32D6987-0155-4DAC-9AE9-FC8490E69793</key>
-		<dict>
-			<key>ypos</key>
-			<real>370</real>
-		</dict>
 		<key>E92D3CF8-7C01-42C4-9BB5-6FD3109326A6</key>
 		<dict>
 			<key>ypos</key>
@@ -334,6 +262,6 @@
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>https://github.com/alexchantastic/alfred-lorem-ipsum-workflow</string>
+	<string>https://github.com/alexchantastic/alfred-lipsum-workflow</string>
 </dict>
 </plist>
