@@ -11,11 +11,11 @@ if (!$length) {
 }
 
 if ($type === 'words') {
-  echo $lipsum->words($length);
+  echo ucfirst($lipsum->words($length));
 }
 elseif ($type === 'sentences') {
-  echo $lipsum->sentences($length);
+  echo ucfirst($lipsum->sentences($length));
 }
 elseif ($type === 'paragraphs') {
-  echo $lipsum->paragraphs($length);
+  echo ucfirst($lipsum->paragraphs($length));
 }

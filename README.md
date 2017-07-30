@@ -2,7 +2,7 @@
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/604167/14924481/ac6037e2-0df7-11e6-8558-b823fe868d1e.png)
 
-An [Alfred 2](https://www.alfredapp.com/) workflow for generating [lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum) dummy text using [joshtronic/php-loremipsum](https://github.com/joshtronic/php-loremipsum).
+An [Alfred 3](https://www.alfredapp.com/) workflow for generating [lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum) dummy text using [joshtronic/php-loremipsum](https://github.com/joshtronic/php-loremipsum).
 
 ## Installation
 
