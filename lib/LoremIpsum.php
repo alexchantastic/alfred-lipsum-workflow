@@ -26,7 +26,7 @@ class LoremIpsum
      * @access private
      * @var    boolean
      */
-    private $first = true;
+    private $first = false;
 
     /**
      * Words
