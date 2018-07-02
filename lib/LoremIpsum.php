@@ -8,8 +8,8 @@
  * Licensed under The MIT License.
  * Redistribution of these files must retain the above copyright notice.
  *
- * @author    Josh Sherman <josh@gravityblvd.com>
- * @copyright Copyright 2014, Josh Sherman
+ * @author    Josh Sherman <hello@joshtronic.com>
+ * @copyright Copyright 2014, 2015, 2016, 2017, 2018 Josh Sherman
  * @license   http://www.opensource.org/licenses/mit-license.html
  * @link      https://github.com/joshtronic/php-loremipsum
  */
@@ -26,7 +26,7 @@ class LoremIpsum
      * @access private
      * @var    boolean
      */
-    private $first = false;
+    private $first = true;
 
     /**
      * Words
@@ -39,53 +39,37 @@ class LoremIpsum
      */
     public $words = array(
         // Lorem ipsum...
-        'lorem',        'ipsum',       'dolor',        'sit',
-        'amet',         'consectetur', 'adipiscing',   'elit',
-        // The rest of the vocabulary
-        'a',            'ac',          'accumsan',     'ad',
-        'aenean',       'aliquam',     'aliquet',      'ante',
-        'aptent',       'arcu',        'at',           'auctor',
-        'augue',        'bibendum',    'blandit',      'class',
-        'commodo',      'condimentum', 'congue',       'consequat',
-        'conubia',      'convallis',   'cras',         'cubilia',
-        'cum',          'curabitur',   'curae',        'cursus',
-        'dapibus',      'diam',        'dictum',       'dictumst',
-        'dignissim',    'dis',         'donec',        'dui',
-        'duis',         'egestas',     'eget',         'eleifend',
-        'elementum',    'enim',        'erat',         'eros',
-        'est',          'et',          'etiam',        'eu',
-        'euismod',      'facilisi',    'facilisis',    'fames',
-        'faucibus',     'felis',       'fermentum',    'feugiat',
-        'fringilla',    'fusce',       'gravida',      'habitant',
-        'habitasse',    'hac',         'hendrerit',    'himenaeos',
-        'iaculis',      'id',          'imperdiet',    'in',
-        'inceptos',     'integer',     'interdum',     'justo',
-        'lacinia',      'lacus',       'laoreet',      'lectus',
-        'leo',          'libero',      'ligula',       'litora',
-        'lobortis',     'luctus',      'maecenas',     'magna',
-        'magnis',       'malesuada',   'massa',        'mattis',
-        'mauris',       'metus',       'mi',           'molestie',
-        'mollis',       'montes',      'morbi',        'mus',
-        'nam',          'nascetur',    'natoque',      'nec',
-        'neque',        'netus',       'nibh',         'nisi',
-        'nisl',         'non',         'nostra',       'nulla',
-        'nullam',       'nunc',        'odio',         'orci',
-        'ornare',       'parturient',  'pellentesque', 'penatibus',
-        'per',          'pharetra',    'phasellus',    'placerat',
-        'platea',       'porta',       'porttitor',    'posuere',
-        'potenti',      'praesent',    'pretium',      'primis',
-        'proin',        'pulvinar',    'purus',        'quam',
-        'quis',         'quisque',     'rhoncus',      'ridiculus',
-        'risus',        'rutrum',      'sagittis',     'sapien',
-        'scelerisque',  'sed',         'sem',          'semper',
-        'senectus',     'sociis',      'sociosqu',     'sodales',
-        'sollicitudin', 'suscipit',    'suspendisse',  'taciti',
-        'tellus',       'tempor',      'tempus',       'tincidunt',
-        'torquent',     'tortor',      'tristique',    'turpis',
-        'ullamcorper',  'ultrices',    'ultricies',    'urna',
-        'ut',           'varius',      'vehicula',     'vel',
-        'velit',        'venenatis',   'vestibulum',   'vitae',
-        'vivamus',      'viverra',     'volutpat',     'vulputate',
+        'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit',
+
+        // and the rest of the vocabulary
+        'a', 'ac', 'accumsan', 'ad', 'aenean', 'aliquam', 'aliquet', 'ante',
+        'aptent', 'arcu', 'at', 'auctor', 'augue', 'bibendum', 'blandit',
+        'class', 'commodo', 'condimentum', 'congue', 'consequat', 'conubia',
+        'convallis', 'cras', 'cubilia', 'curabitur', 'curae', 'cursus',
+        'dapibus', 'diam', 'dictum', 'dictumst', 'dignissim', 'dis', 'donec',
+        'dui', 'duis', 'efficitur', 'egestas', 'eget', 'eleifend', 'elementum',
+        'enim', 'erat', 'eros', 'est', 'et', 'etiam', 'eu', 'euismod', 'ex',
+        'facilisi', 'facilisis', 'fames', 'faucibus', 'felis', 'fermentum',
+        'feugiat', 'finibus', 'fringilla', 'fusce', 'gravida', 'habitant',
+        'habitasse', 'hac', 'hendrerit', 'himenaeos', 'iaculis', 'id',
+        'imperdiet', 'in', 'inceptos', 'integer', 'interdum', 'justo',
+        'lacinia', 'lacus', 'laoreet', 'lectus', 'leo', 'libero', 'ligula',
+        'litora', 'lobortis', 'luctus', 'maecenas', 'magna', 'magnis',
+        'malesuada', 'massa', 'mattis', 'mauris', 'maximus', 'metus', 'mi',
+        'molestie', 'mollis', 'montes', 'morbi', 'mus', 'nam', 'nascetur',
+        'natoque', 'nec', 'neque', 'netus', 'nibh', 'nisi', 'nisl', 'non',
+        'nostra', 'nulla', 'nullam', 'nunc', 'odio', 'orci', 'ornare',
+        'parturient', 'pellentesque', 'penatibus', 'per', 'pharetra',
+        'phasellus', 'placerat', 'platea', 'porta', 'porttitor', 'posuere',
+        'potenti', 'praesent', 'pretium', 'primis', 'proin', 'pulvinar',
+        'purus', 'quam', 'quis', 'quisque', 'rhoncus', 'ridiculus', 'risus',
+        'rutrum', 'sagittis', 'sapien', 'scelerisque', 'sed', 'sem', 'semper',
+        'senectus', 'sociosqu', 'sodales', 'sollicitudin', 'suscipit',
+        'suspendisse', 'taciti', 'tellus', 'tempor', 'tempus', 'tincidunt',
+        'torquent', 'tortor', 'tristique', 'turpis', 'ullamcorper', 'ultrices',
+        'ultricies', 'urna', 'ut', 'varius', 'vehicula', 'vel', 'velit',
+        'venenatis', 'vestibulum', 'vitae', 'vivamus', 'viverra', 'volutpat',
+        'vulputate',
     );
 
     /**
@@ -135,18 +119,15 @@ class LoremIpsum
 
         // Shuffles and appends the word list to compensate for count
         // arguments that exceed the size of our vocabulary list
-        while ($word_count < $count)
-        {
+        while ($word_count < $count) {
             $shuffle = true;
 
-            while ($shuffle)
-            {
+            while ($shuffle) {
                 $this->shuffle();
 
                 // Checks that the last word of the list and the first word of
                 // the list that's about to be appended are not the same
-                if (!$word_count || $words[$word_count - 1] != $this->words[0])
-                {
+                if (!$word_count || $words[$word_count - 1] != $this->words[0]) {
                     $words      = array_merge($words, $this->words);
                     $word_count = count($words);
                     $shuffle    = false;
@@ -203,8 +184,7 @@ class LoremIpsum
     {
         $sentences = array();
 
-        for ($i = 0; $i < $count; $i++)
-        {
+        for ($i = 0; $i < $count; $i++) {
             $sentences[] = $this->wordsArray($this->gauss(24.46, 5.08));
         }
 
@@ -257,8 +237,7 @@ class LoremIpsum
     {
         $paragraphs = array();
 
-        for ($i = 0; $i < $count; $i++)
-        {
+        for ($i = 0; $i < $count; $i++) {
             $paragraphs[] = $this->sentences($this->gauss(5.8, 1.93));
         }
 
@@ -297,8 +276,7 @@ class LoremIpsum
      */
     private function shuffle()
     {
-        if ($this->first)
-        {
+        if ($this->first) {
             $this->first = array_slice($this->words, 0, 8);
             $this->words = array_slice($this->words, 8);
 
@@ -307,9 +285,7 @@ class LoremIpsum
             $this->words = $this->first + $this->words;
 
             $this->first = false;
-        }
-        else
-        {
+        } else {
             shuffle($this->words);
         }
     }
@@ -326,23 +302,19 @@ class LoremIpsum
      */
     private function punctuate(&$sentences)
     {
-        foreach ($sentences as $key => $sentence)
-        {
+        foreach ($sentences as $key => $sentence) {
             $words = count($sentence);
 
             // Only worry about commas on sentences longer than 4 words
-            if ($words > 4)
-            {
+            if ($words > 4) {
                 $mean    = log($words, 6);
                 $std_dev = $mean / 6;
                 $commas  = round($this->gauss($mean, $std_dev));
 
-                for ($i = 1; $i <= $commas; $i++)
-                {
+                for ($i = 1; $i <= $commas; $i++) {
                     $word = round($i * $words / ($commas + 1));
 
-                    if ($word < ($words - 1) && $word > 0)
-                    {
+                    if ($word < ($words - 1) && $word > 0) {
                         $sentence[$word] .= ',';
                     }
                 }
@@ -369,29 +341,20 @@ class LoremIpsum
      */
     private function output($strings, $tags, $array, $delimiter = ' ')
     {
-        if ($tags)
-        {
-            if (!is_array($tags))
-            {
+        if ($tags) {
+            if (!is_array($tags)) {
                 $tags = array($tags);
-            }
-            else
-            {
+            } else {
                 // Flips the array so we can work from the inside out
                 $tags = array_reverse($tags);
             }
 
-            foreach ($strings as $key => $string)
-            {
-                foreach ($tags as $tag)
-                {
+            foreach ($strings as $key => $string) {
+                foreach ($tags as $tag) {
                     // Detects / applies back reference
-                    if ($tag[0] == '<')
-                    {
+                    if ($tag[0] == '<') {
                         $string = str_replace('$1', $string, $tag);
-                    }
-                    else
-                    {
+                    } else {
                         $string = sprintf('<%1$s>%2$s</%1$s>', $tag, $string);
                     }
 
@@ -400,8 +363,7 @@ class LoremIpsum
             }
         }
 
-        if (!$array)
-        {
+        if (!$array) {
             $strings = implode($delimiter, $strings);
         }
 
