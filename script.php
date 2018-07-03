@@ -6,11 +6,41 @@ $lipsum = new joshtronic\LoremIpsum();
 $type = $argv[1];
 $length = $argv[2];
 
-if (!$length) {
-  $length = 1;
+$length = $length ? $length : 1;
+
+/**
+ * Characters
+ *
+ * Generates characters of lorem ipsum.
+ *
+ * @param  integer $count how many characters to generate
+ * @return string generated lorem ipsum characters
+ */
+function characters($count) {
+  global $lipsum;
+
+  $character_count = 0;
+  $words_array = array();
+
+  while ($character_count < $count) {
+    $word = $lipsum->word();
+    $word_length = strlen($word);
+
+    $character_count += $word_length + count($words_array);
+
+    array_push($words_array, $word);  
+  }
+
+  $words = implode(' ', $words_array);
+  $words = substr($words, 0, $count);
+
+  return $words;
 }
 
-if ($type === 'words') {
+if ($type === 'characters') {
+  echo ucfirst(characters($length));
+}
+elseif ($type === 'words') {
   echo ucfirst($lipsum->words($length));
 }
 elseif ($type === 'sentences') {
