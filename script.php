@@ -48,15 +48,19 @@ function characters($count) {
   return $words;
 }
 
-if ($type === 'characters') {
-  echo ucfirst(characters($length));
+switch ($type) {
+  case 'characters':
+    $output = characters($length);
+    break;
+  case 'words':
+    $output = $lipsum->words($length);
+    break;
+  case 'sentences':
+    $output = $lipsum->sentences($length);
+    break;
+  case 'paragraphs':
+    $output = $lipsum->paragraphs($length);
+    break;
 }
-elseif ($type === 'words') {
-  echo ucfirst($lipsum->words($length));
-}
-elseif ($type === 'sentences') {
-  echo ucfirst($lipsum->sentences($length));
-}
-elseif ($type === 'paragraphs') {
-  echo ucfirst($lipsum->paragraphs($length));
-}
+
+echo ucfirst($output);
