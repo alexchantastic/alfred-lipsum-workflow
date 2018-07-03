@@ -34,6 +34,12 @@ function characters($count) {
   $words = implode(' ', $words_array);
   $words = substr($words, 0, $count);
 
+  $last_character = substr($words, -1);
+
+  if ($last_character === ' ') {
+    $words = substr($words, 0, -1) . substr($lipsum->word(), 0, 1);
+  }
+
   return $words;
 }
 
