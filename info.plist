@@ -17,6 +17,21 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2D3FFB80-A2C2-462F-9D62-82505DDCAEBB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC091BCF-5793-46A2-B88D-EB1A780BB71D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>65A6620E-EE2C-4D14-8123-BB4592DBABD2</key>
@@ -28,6 +43,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>7BD2998D-4CDE-4653-B6FB-B7BEF837A34C</key>
@@ -39,6 +56,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>81786618-C116-42AA-87BB-06537E229EEC</key>
@@ -50,6 +69,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>BACA329C-E588-479B-9FDC-35863B7E37F6</key>
@@ -61,6 +82,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>E92D3CF8-7C01-42C4-9BB5-6FD3109326A6</key>
@@ -72,6 +95,21 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FC091BCF-5793-46A2-B88D-EB1A780BB71D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>125F91DD-9720-45BD-9F14-08966CFC2643</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -82,9 +120,70 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Lorem Ipsum v2.0.0</string>
+	<string>Lorem Ipsum</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f script.php "characters" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FC091BCF-5793-46A2-B88D-EB1A780BB71D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>125F91DD-9720-45BD-9F14-08966CFC2643</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>lipsum</string>
+				<key>subtext</key>
+				<string>Generate {query} characters</string>
+				<key>text</key>
+				<string>Characters</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2D3FFB80-A2C2-462F-9D62-82505DDCAEBB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -104,22 +203,7 @@
 			<key>uid</key>
 			<string>7BD2998D-4CDE-4653-B6FB-B7BEF837A34C</string>
 			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>125F91DD-9720-45BD-9F14-08966CFC2643</string>
-			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -130,6 +214,10 @@
 				<integer>127</integer>
 				<key>script</key>
 				<string>php -f script.php "words" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -138,7 +226,30 @@
 			<key>uid</key>
 			<string>E92D3CF8-7C01-42C4-9BB5-6FD3109326A6</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f script.php "sentences" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BACA329C-E588-479B-9FDC-35863B7E37F6</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -159,45 +270,7 @@
 			<key>uid</key>
 			<string>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</string>
 			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>php -f script.php "sentences" "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>BACA329C-E588-479B-9FDC-35863B7E37F6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>php -f script.php "paragraphs" "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>65A6620E-EE2C-4D14-8123-BB4592DBABD2</string>
-			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -218,49 +291,102 @@
 			<key>uid</key>
 			<string>81786618-C116-42AA-87BB-06537E229EEC</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f script.php "paragraphs" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>65A6620E-EE2C-4D14-8123-BB4592DBABD2</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>An Alfred 3 workflow for generating lorem ipsum dummy text using joshtronic/php-loremipsum.</string>
 	<key>uidata</key>
 	<dict>
 		<key>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</key>
 		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
 			<key>ypos</key>
-			<real>130</real>
+			<integer>250</integer>
 		</dict>
 		<key>125F91DD-9720-45BD-9F14-08966CFC2643</key>
 		<dict>
+			<key>xpos</key>
+			<integer>530</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>10</integer>
+		</dict>
+		<key>2D3FFB80-A2C2-462F-9D62-82505DDCAEBB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
+			<key>ypos</key>
+			<integer>10</integer>
 		</dict>
 		<key>65A6620E-EE2C-4D14-8123-BB4592DBABD2</key>
 		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
 			<key>ypos</key>
-			<real>250</real>
+			<integer>370</integer>
 		</dict>
 		<key>7BD2998D-4CDE-4653-B6FB-B7BEF837A34C</key>
 		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>130</integer>
 		</dict>
 		<key>81786618-C116-42AA-87BB-06537E229EEC</key>
 		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
 			<key>ypos</key>
-			<real>250</real>
+			<integer>370</integer>
 		</dict>
 		<key>BACA329C-E588-479B-9FDC-35863B7E37F6</key>
 		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
 			<key>ypos</key>
-			<real>130</real>
+			<integer>250</integer>
 		</dict>
 		<key>E92D3CF8-7C01-42C4-9BB5-6FD3109326A6</key>
 		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>130</integer>
+		</dict>
+		<key>FC091BCF-5793-46A2-B88D-EB1A780BB71D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>10</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string>2.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/alexchantastic/alfred-lipsum-workflow</string>
 </dict>
