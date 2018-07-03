@@ -20,15 +20,20 @@ function characters($count) {
   global $lipsum;
 
   $character_count = 0;
+  $words_count = 0;
   $words_array = array();
 
   while ($character_count < $count) {
     $word = $lipsum->word();
     $word_length = strlen($word);
 
-    $character_count += $word_length + count($words_array);
+    if ($word !== $words_array[$words_count - 1]) {
+      $character_count += $word_length + count($words_array);
 
-    array_push($words_array, $word);  
+      array_push($words_array, $word);  
+
+      $words_count = count($words_array);
+    }
   }
 
   $words = implode(' ', $words_array);
