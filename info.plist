@@ -131,7 +131,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "characters" "{query}"</string>
+				<string>python3 lipsum.py characters {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -153,6 +153,8 @@
 				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -161,7 +163,7 @@
 			<key>uid</key>
 			<string>125F91DD-9720-45BD-9F14-08966CFC2643</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -213,7 +215,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "words" "{query}"</string>
+				<string>python3 lipsum.py words {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -225,29 +227,6 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>E92D3CF8-7C01-42C4-9BB5-6FD3109326A6</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>php -f script.php "sentences" "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>BACA329C-E588-479B-9FDC-35863B7E37F6</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -271,6 +250,29 @@
 			<string>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>python3 lipsum.py sentences {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BACA329C-E588-479B-9FDC-35863B7E37F6</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -301,7 +303,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "paragraphs" "{query}"</string>
+				<string>python3 lipsum.py paragraphs {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -318,7 +320,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>An Alfred 3 workflow for generating lorem ipsum dummy text using joshtronic/php-loremipsum.</string>
+	<string>An Alfred 4 workflow for generating lorem ipsum dummy text.</string>
 	<key>uidata</key>
 	<dict>
 		<key>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</key>
@@ -385,8 +387,10 @@
 			<integer>10</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>2.2.0</string>
+	<string>3.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/alexchantastic/alfred-lipsum-workflow</string>
 </dict>
