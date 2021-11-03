@@ -24,7 +24,7 @@ def lipsum(type):
     return lorem.get_sentence(count)
 
   elif type == 'paragraphs':
-    return lorem.get_paragraph(count)
+    return lorem.get_paragraph(count, '\n\n')
 
   else:
     return lorem.get_sentence(count)
