@@ -29,4 +29,5 @@ def lipsum(type):
   else:
     return lorem.get_sentence(count)
 
-print(lipsum(type))
+sys.stdout.write(lipsum(type))
+sys.stdout.flush()
