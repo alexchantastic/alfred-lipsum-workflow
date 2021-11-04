@@ -87,7 +87,6 @@ pool as you wish.
 import itertools
 import os
 import random
-#import typing
 
 __all__ = [
     'set_pool',
@@ -231,11 +230,6 @@ def word(count = 1,  # pylint: disable=dangerous-default-value
 
     """
     pool = _gen_pool(count)
-    # yield from itertools.cycle(_gen_word(pool=pool,
-    #                                      func=func,
-    #                                      args=args,
-    #                                      kwargs=kwargs) for _ in range(count))
-
     for word in itertools.cycle(_gen_word(pool=pool,
                                          func=func,
                                          args=args,
@@ -264,10 +258,6 @@ def sentence(count = 1, comma = (0, 2), word_range = (4, 8)):
 
     """
     pool = _gen_pool(count * random.randint(*word_range))
-    # yield from itertools.cycle(_gen_sentence(pool=pool,
-    #                                          comma=comma,
-    #                                          word_range=word_range) for _ in range(count))
-
     for sentence in itertools.cycle(_gen_sentence(pool=pool,
                                              comma=comma,
                                              word_range=word_range) for _ in range(count)):
@@ -305,11 +295,6 @@ def paragraph(count = 1, comma = (0, 2), word_range = (4, 8), sentence_range = (
 
     """
     pool = _gen_pool(count * random.randint(*word_range) * random.randint(*sentence_range))
-    # yield from itertools.cycle(_gen_paragraph(pool=pool,
-    #                                           comma=comma,
-    #                                           word_range=word_range,
-    #                                           sentence_range=sentence_range) for _ in range(count))
-
     for paragraph in itertools.cycle(_gen_paragraph(pool=pool,
                                               comma=comma,
                                               word_range=word_range,
