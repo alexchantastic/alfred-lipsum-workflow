@@ -87,7 +87,7 @@ pool as you wish.
 import itertools
 import os
 import random
-import typing
+#import typing
 
 __all__ = [
     'set_pool',
@@ -105,7 +105,7 @@ _TEXT = ('ad', 'adipiscing', 'aliqua', 'aliquip', 'amet', 'anim', 'aute', 'cillu
          'sint', 'sit', 'sunt', 'tempor', 'ullamco', 'ut', 'velit', 'veniam', 'voluptate')
 
 
-def _gen_pool(dupe: int = 1) -> typing.Iterator[str]:
+def _gen_pool(dupe = 1):
     """Generate word pool.
 
     Args:
@@ -126,9 +126,8 @@ def _gen_pool(dupe: int = 1) -> typing.Iterator[str]:
         random.shuffle(pool)
 
 
-def _gen_word(pool: typing.Iterator[str],  # pylint: disable=dangerous-default-value
-              func: typing.Optional[typing.Union[str, typing.Callable[[str], str]]] = None,
-              args: typing.Tuple[str] = (), kwargs: typing.Dict[str, str] = {}) -> str:
+def _gen_word(pool,  # pylint: disable=dangerous-default-value
+              func = None, args = (), kwargs = {}):
     """Generate random word.
 
     Args:
@@ -152,9 +151,7 @@ def _gen_word(pool: typing.Iterator[str],  # pylint: disable=dangerous-default-v
     return text
 
 
-def _gen_sentence(pool: typing.Iterator[str],
-                  comma: typing.Tuple[int],
-                  word_range: typing.Tuple[int]) -> str:
+def _gen_sentence(pool, comma, word_range):
     """Generate random sentence.
 
     Args:
@@ -184,10 +181,7 @@ def _gen_sentence(pool: typing.Iterator[str],
     return text + '.'
 
 
-def _gen_paragraph(pool: typing.Iterator[str],
-                   comma: typing.Tuple[int],
-                   word_range: typing.Tuple[int],
-                   sentence_range: typing.Tuple[int]) -> str:
+def _gen_paragraph(pool, comma, word_range, sentence_range):
     """Generate random paragraph.
 
     Args:
@@ -211,9 +205,8 @@ def _gen_paragraph(pool: typing.Iterator[str],
     return text
 
 
-def word(count: int = 1,  # pylint: disable=dangerous-default-value
-         func: typing.Optional[typing.Union[str, typing.Callable[[str], str]]] = None,
-         args: typing.Tuple[str] = (), kwargs: typing.Dict[str, str] = {}) -> typing.Iterator[str]:
+def word(count = 1,  # pylint: disable=dangerous-default-value
+         func = None, args = (), kwargs = {}):
     """Generate a list of random words.
 
     .. code:: python
@@ -238,15 +231,19 @@ def word(count: int = 1,  # pylint: disable=dangerous-default-value
 
     """
     pool = _gen_pool(count)
-    yield from itertools.cycle(_gen_word(pool=pool,
+    # yield from itertools.cycle(_gen_word(pool=pool,
+    #                                      func=func,
+    #                                      args=args,
+    #                                      kwargs=kwargs) for _ in range(count))
+
+    for word in itertools.cycle(_gen_word(pool=pool,
                                          func=func,
                                          args=args,
-                                         kwargs=kwargs) for _ in range(count))
+                                         kwargs=kwargs) for _ in range(count)):
+        yield word
 
 
-def sentence(count: int = 1,
-             comma: typing.Tuple[int] = (0, 2),
-             word_range: typing.Tuple[int] = (4, 8)) -> typing.Iterator[str]:
+def sentence(count = 1, comma = (0, 2), word_range = (4, 8)):
     """Generate a list of random sentences.
 
     .. code:: python
@@ -267,15 +264,17 @@ def sentence(count: int = 1,
 
     """
     pool = _gen_pool(count * random.randint(*word_range))
-    yield from itertools.cycle(_gen_sentence(pool=pool,
+    # yield from itertools.cycle(_gen_sentence(pool=pool,
+    #                                          comma=comma,
+    #                                          word_range=word_range) for _ in range(count))
+
+    for sentence in itertools.cycle(_gen_sentence(pool=pool,
                                              comma=comma,
-                                             word_range=word_range) for _ in range(count))
+                                             word_range=word_range) for _ in range(count)):
+        yield sentence
 
 
-def paragraph(count: int = 1,
-              comma: typing.Tuple[int] = (0, 2),
-              word_range: typing.Tuple[int] = (4, 8),
-              sentence_range: typing.Tuple[int] = (5, 10)) -> typing.Iterator[str]:
+def paragraph(count = 1, comma = (0, 2), word_range = (4, 8), sentence_range = (5, 10)):
     """Generate a list of random paragraphs.
 
     .. code:: python
@@ -306,16 +305,20 @@ def paragraph(count: int = 1,
 
     """
     pool = _gen_pool(count * random.randint(*word_range) * random.randint(*sentence_range))
-    yield from itertools.cycle(_gen_paragraph(pool=pool,
+    # yield from itertools.cycle(_gen_paragraph(pool=pool,
+    #                                           comma=comma,
+    #                                           word_range=word_range,
+    #                                           sentence_range=sentence_range) for _ in range(count))
+
+    for paragraph in itertools.cycle(_gen_paragraph(pool=pool,
                                               comma=comma,
                                               word_range=word_range,
-                                              sentence_range=sentence_range) for _ in range(count))
+                                              sentence_range=sentence_range) for _ in range(count)):
+        yield paragraph
 
 
-def get_word(count: typing.Union[int, typing.Tuple[int]] = 1,  # pylint: disable=dangerous-default-value
-             sep: str = ' ',
-             func: typing.Optional[typing.Union[str, typing.Callable[[str], str]]] = None,
-             args: typing.Tuple[str] = (), kwargs: typing.Dict[str, str] = {}) -> str:
+def get_word(count = 1,  # pylint: disable=dangerous-default-value
+             sep = ' ', func = None, args = (), kwargs = {}):
     """Return random words.
 
     .. code:: python
@@ -347,10 +350,7 @@ def get_word(count: typing.Union[int, typing.Tuple[int]] = 1,  # pylint: disable
     return sep.join(itertools.islice(word(count, func, args, kwargs), count))
 
 
-def get_sentence(count: typing.Union[int, typing.Tuple[int]] = 1,
-                 sep: str = ' ',
-                 comma: typing.Tuple[int] = (0, 2),
-                 word_range: typing.Tuple[int] = (4, 8)) -> str:
+def get_sentence(count = 1, sep = ' ', comma = (0, 2), word_range = (4, 8)):
     """Return random sentences.
 
     .. code:: python
@@ -380,11 +380,7 @@ def get_sentence(count: typing.Union[int, typing.Tuple[int]] = 1,
     return sep.join(itertools.islice(sentence(count, comma, word_range), count))
 
 
-def get_paragraph(count: typing.Union[int, typing.Tuple[int]] = 1,
-                  sep: str = os.linesep,
-                  comma: typing.Tuple[int] = (0, 2),
-                  word_range: typing.Tuple[int] = (4, 8),
-                  sentence_range: typing.Tuple[int] = (5, 10)) -> str:
+def get_paragraph(count = 1, sep = os.linesep, comma = (0, 2), word_range = (4, 8), sentence_range = (5, 10)):
     """Return random paragraphs.
 
     .. code:: python
@@ -424,7 +420,7 @@ def get_paragraph(count: typing.Union[int, typing.Tuple[int]] = 1,
     return sep.join(itertools.islice(paragraph(count, comma, word_range, sentence_range), count))
 
 
-def set_pool(pool: typing.Iterable[str]):
+def set_pool(pool):
     """Customise random word pool.
 
     Args:
