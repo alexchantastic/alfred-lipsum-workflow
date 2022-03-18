@@ -131,7 +131,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>python lipsum.py characters {query}</string>
+				<string>python3 lipsum.py characters {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -215,7 +215,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>python lipsum.py words {query}</string>
+				<string>python3 lipsum.py words {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -238,7 +238,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>python lipsum.py sentences {query}</string>
+				<string>python3 lipsum.py sentences {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -303,7 +303,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>python lipsum.py paragraphs {query}</string>
+				<string>python3 lipsum.py paragraphs {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -390,7 +390,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.1.1</string>
+	<string>3.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/alexchantastic/alfred-lipsum-workflow</string>
 </dict>
