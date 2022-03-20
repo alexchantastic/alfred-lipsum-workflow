@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# lorem-shell
-# https://github.com/alexchantastic/lorem-shell
+# lipsum-shell
+# https://github.com/alexchantastic/lipsum-shell
 
 # MIT License
 
