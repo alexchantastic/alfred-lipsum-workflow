@@ -17,3 +17,7 @@ Note that the [Alfred Powerpack](https://www.alfredapp.com/powerpack/) is requir
 2. Select format you want to generate (characters, words, sentences, or paragraphs)
 3. (Optional) Type in the number of the format you would like to generate (defaults to 1)
 4. Press `enter` to copy to clipboard and paste into the forefront application or just `⌘ + c` to copy to clipboard
+
+## License
+
+Code released under the [MIT License](https://github.com/alexchantastic/alfred-lipsum-workflow/blob/master/LICENSE).
