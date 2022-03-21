@@ -131,7 +131,13 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>./lipsum.sh -t characters -c {query}</string>
+				<string>count={query}
+
+if [[ $count = "" ]]; then
+  count=1
+fi
+
+sh lipsum.sh -t characters -c $count</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -215,7 +221,13 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>./lipsum.sh -t words -c {query}</string>
+				<string>count={query}
+
+if [[ $count = "" ]]; then
+  count=1
+fi
+
+sh lipsum.sh -t words -c $count</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -259,7 +271,13 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>./lipsum.sh -t sentences -c {query}</string>
+				<string>count={query}
+
+if [[ $count = "" ]]; then
+  count=1
+fi
+
+sh lipsum.sh -t sentences -c $count</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -303,7 +321,13 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>./lipsum.sh -t paragraphs -c {query}</string>
+				<string>count={query}
+
+if [[ $count = "" ]]; then
+  count=1
+fi
+
+sh lipsum.sh -t paragraphs -c $count</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -390,7 +414,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>4.0.0</string>
+	<string>4.0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/alexchantastic/alfred-lipsum-workflow</string>
 </dict>
