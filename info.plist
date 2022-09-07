@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string>com.alexchantastic.loremipsum</string>
 	<key>category</key>
-	<string>Productivity</string>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</key>
@@ -245,6 +245,27 @@ sh lipsum.sh -t words -c $count</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>lipsum</string>
+				<key>subtext</key>
+				<string>Generate {query} sentences</string>
+				<key>text</key>
+				<string>Sentences</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -270,27 +291,6 @@ sh lipsum.sh -t sentences -c $count</string>
 			<string>BACA329C-E588-479B-9FDC-35863B7E37F6</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>lipsum</string>
-				<key>subtext</key>
-				<string>Generate {query} sentences</string>
-				<key>text</key>
-				<string>Sentences</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -416,7 +416,7 @@ sh lipsum.sh -t paragraphs -c $count</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>4.0.2</string>
+	<string>4.0.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/alexchantastic/alfred-lipsum-workflow</string>
 </dict>
